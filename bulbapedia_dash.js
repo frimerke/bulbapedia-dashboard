@@ -48,6 +48,7 @@ var setup_dashboard = function() {
     class: 'dashboarddiv'
   }).appendTo('#middle-column');
   stat_chart_box.css("height", "50%");
+  stat_chart_box.css("width", "100%");
   stat_chart_box.css("overflow-y", "auto");
   stat_chart_box.html("<ul><li><a href='#base-stats'>Base Stats</a></li><li><a href='#type-chart'>Type Chart</li></ul>")
 
@@ -68,6 +69,8 @@ var setup_dashboard = function() {
   }).appendTo('#dashboard-container');
   right_column.css("float", "right");
   right_column.css("width", "40%");
+  right_column.css("height", "100%");
+  right_column.css("overflow-y", "auto");
 
   var moves_box = jQuery('<div/>', {
     id: 'moves-box',
@@ -105,24 +108,25 @@ var extract_tables = function() {
   gamelocations_table.appendTo("#location-box");
   gamelocations_table.css("margin", "0");
 
-  var basestats_table = $("#Base_stats").parent().next();
-  basestats_table.css("zoom", "1.75");
-  basestats_table.css("-moz-transform", "scale(1.75)");
-  basestats_table.css("-moz-transform-origin", "0 0");
+
+  var basestats_table = $("#Base_stats").parent().nextUntil("h4");
+  //basestats_table.css("zoom", "1.75");
+  //basestats_table.css("-moz-transform", "scale(1.75)");
+  //basestats_table.css("-moz-transform-origin", "0 0");
   basestats_table.css("width", "50%");
   basestats_table.css("margin", "auto");
   basestats_table.appendTo("#base-stats");
 
-  var typechart_table = $("#Type_effectiveness").parent().next();
+  var typechart_table = $("#Type_effectiveness").parent().nextUntil("h3");
   typechart_table.appendTo("#type-chart");
 
-  var move_level_table = $("#By_leveling_up").parent().next();
+  var move_level_table = $("#By_leveling_up").parent().nextUntil("h4");
   move_level_table.appendTo("#level");
 
-  var move_tm_table = $("#By_TM.2FHM").parent().next();
+  var move_tm_table = $("#By_breeding").parent().prevUntil("h4");
   move_tm_table.appendTo("#tm-hm");
 
-  var move_breeding_table = $("#By_breeding").parent().next();
+  var move_breeding_table = $("#By_breeding").parent().nextUntil("h4");
   move_breeding_table.appendTo("#breeding");
 }
 
