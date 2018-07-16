@@ -113,8 +113,8 @@ var extract_tables = function() {
   //basestats_table.css("zoom", "1.75");
   //basestats_table.css("-moz-transform", "scale(1.75)");
   //basestats_table.css("-moz-transform-origin", "0 0");
-  basestats_table.css("width", "50%");
-  basestats_table.css("margin", "auto");
+  //basestats_table.css("width", "50%");
+  //basestats_table.css("margin", "auto");
   basestats_table.appendTo("#base-stats");
 
   var typechart_table = $("#Type_effectiveness").parent().nextUntil("h3");
